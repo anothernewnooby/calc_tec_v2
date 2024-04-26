@@ -1,0 +1,9 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.separador{
+    width: 90%;
+    height: 0.5rem;
+    background-color: v.$color_coralFuerte;
+    margin-top: 6rem;
+}

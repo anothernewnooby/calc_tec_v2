@@ -1,0 +1,31 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.contenedor-header{
+    font-family: v.$fuente_principal;
+    color: v.$color_negro;
+    margin-bottom: 4rem;
+
+    h1{
+        font-size: 5rem;
+        font-weight: 400;
+        padding-top: 1rem;
+        margin: 0 auto;
+    }
+
+    h2{
+        font-size: 3.2rem;
+        font-weight: 200;        
+        margin: 0 auto;
+    }
+
+}

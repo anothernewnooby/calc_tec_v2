@@ -4,8 +4,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="build/css/app.css">
 </head>
 <body>
-    
+    <header class="contenedor contenedor-header">
+        <h1>Calculadora</h1>
+        <h2>Radiologica</h2>
+    </header>
+
+    <main class="contenedorMain">
+        <section class="contenedorResultados">
+            <section class="contenedor_kvp">
+                <h3 class="kvp">00</h3>
+                <p>kilovoltios Pico</p>	
+           </section> <!-- ! fin kvp -->
+
+           <section class="contenedor_mas">
+                <h3 class="mas">00</h3>
+                <p>miliamperios/S</p>
+           </section> <!-- ! fin mAs -->
+
+           <section class="contenedorTecnica">
+                <div class="nombreTecnica">
+                   <h3>Intermedia</h3>                   
+                </div>
+
+                <div class="contenedor_botones">
+                    <button class="boton_tec seleccionado boton1"></button>
+                    <button class="boton_tec boton2"></button>
+                    <button class="boton_tec boton3"></button>
+                    <button class="boton_tec boton4"></button>
+                </div>
+
+                <div class="contenedor_iniciales">
+                    <p>B</p>
+                    <p>I</p>
+                    <p>H</p>
+                    <p>U</p>
+                </div>
+
+                <div class="contenedorEcuacion">
+                    <div class="contenedorDatos">
+                        <p>Constante:</p>
+                        <p>Espesor:</p>
+                        <p>Base:</p>
+                    </div> 
+                
+                    <div class="contendorInputsEc">
+                        <input type="number" id="constante">
+                        <input type="number" id="espesor">
+                        <input type="number" id="base">
+                    </div>
+                </div>
+
+                <div class="calcular">
+                    <button onclick="calcular()">Calcular</button>
+                </div>
+
+            </section> <!--! fin tecnica -->
+        </section>
+            
+        <div class="separador"></div>
+
+        <section class="contenedorComp">
+            <section class="cotenedorTitulo">
+                <h3 class="titulo1">Compensar</h3>
+                <p class="titulo2">Distancia</p>
+            </section>
+
+            <section class="contenedorDI">
+                <div class="inputWrapper">
+                    <input type="number" class="inputDI" placeholder="00">
+                </div>
+                <p class="p-dist">Distancia Inicial</p>
+            </section>
+            
+            <section class="contenedorDF">
+                <div class="inputWrapper">
+                    <input type="number" class="inputDF" placeholder="00">
+                </div>
+                <p class="p-dist">Distancia final</p>
+            </section>
+
+            <section class="compensar">
+                <button onclick="compensar()">Compensar</button>
+            </section>
+
+        </section>
+
+        <div class="separador"></div>
+
+        <section class="contenedorBucky">
+            <h3>Factor Bucky</h3>
+
+            <div class="primerFila">
+                <p>I.Rej</p>
+                <p>70</p>
+                <p>90</p>
+                <p>120</p>
+            </div>
+
+            <div class="separadorBuky"></div>
+
+            <div class="segundaFila">
+                <p>5.1</p>
+                <p>2.0</p>
+                <p>2.5</p>
+                <p>3.0</p>
+            </div>
+
+            <div class="separadorBuky"></div>
+
+            <div class="terceraFila">
+                <p>8.1</p>
+                <p>3.0</p>
+                <p>3.5</p>
+                <p>4.0</p>
+            </div>
+
+            <div class="separadorBuky"></div>
+
+            <div class="cuartaFila">
+                <p>12.1</p>
+                <p>3.5</p>
+                <p>4.0</p>
+                <p>5.0</p>
+            </div>
+
+            <div class="separadorBuky"></div>
+
+            <div class="quintaFila">
+                <p>16.1</p>
+                <p>4.0</p>
+                <p>5.0</p>
+                <p>6.0</p>
+            </div>
+
+            <section class="calculoBucky">
+                <input type="number" placeholder="Ingresar Indice" class="factorizar">
+                <button onclick="calcularFactorBucky()">Factor Bucky</button>
+            </section>
+        </section>
+
+        <div class="separadorFinal"></div>
+
+        <footer class="footer">
+            <p>Desarrollado por <span>Diego Correa</span></p>	
+        </footer>
+
+
+        <script src="build/js/app.js"></script>
+    </main>
 </body>
 </html>

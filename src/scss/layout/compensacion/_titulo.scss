@@ -1,0 +1,129 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedorComp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .contenedorTitulo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; /* Añade esta línea */
+    }
+
+    .titulo1{
+        font-size: 5rem;
+        font-weight: 400;
+        padding-top: 4rem;
+        margin: 0 auto;
+        
+    }
+
+    .titulo2{
+        font-size: 3.2rem;
+        font-weight: 200;        
+        margin: 0 0 0 5.5rem;
+    }
+
+    .contenedorDI,
+    .contenedorDF{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        margin-top: 2rem;
+        gap: 1rem; 
+
+        @media (min-width: 384px) and (max-width: 427px){
+            .inputDI,
+            .inputDF{
+                font-size: 7rem;
+                font-weight: 800;
+                width: 11rem;
+                height: 9rem;
+            }
+        
+            p{
+                font-size: 2.5rem;
+            }
+        }
+    }
+
+    .contenedorDI{
+        margin-top: 4.5rem;
+        margin-right: 5rem;
+        margin-bottom: 2rem;
+
+        @media (min-width: 383px) and (max-width: 427px){
+           .contenedorDI{
+            margin-top: 4.5rem;
+            margin-right: 0rem;
+            margin-bottom: 2rem;
+           }
+        }
+    }
+
+    .contenedorDF{
+        margin-left: 4rem;
+        margin-bottom: 2rem;
+    }
+
+    .inputDI,
+    .inputDF{
+        font-size: 8.5rem;
+        font-weight: 800;
+        width: 13rem;
+        height: 10rem;
+        margin: 0 auto;
+        text-align: center;
+        border: none;
+        border-radius: 1rem;
+        background-color: v.$color_vacio;
+
+        /* Agrega este código para eliminar las flechas */
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        -moz-appearance: textfield;
+
+        &:focus{
+            outline:none;
+        }
+    }
+
+    .p-dist{
+        font-size: 2.5rem;
+        margin: 0 0 0 1rem;    
+    }
+
+    
+}
+
+.compensar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    margin-bottom: 0rem;
+
+
+    button{
+        font-size: 2.3rem;
+        font-weight: 600;
+        width: 25rem;
+        height: 4rem;
+        color: v.$color_crema;
+        background-color: v.$color_coralFuerte;
+
+        border-radius: 2rem;
+    }
+
+    &:hover{
+        color: v.$color_coralFuerte;
+    }
+}

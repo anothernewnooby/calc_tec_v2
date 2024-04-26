@@ -1,0 +1,11 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedorMain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 40rem;
+    margin: 0 auto;
+}

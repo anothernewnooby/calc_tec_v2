@@ -1,0 +1,39 @@
+@use 'variables' as v;
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-padding-top: 0rem;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+body{
+    font-family: v.$fuente_principal;
+    font-size: 1.6rem;
+    color: v.$color_negro;
+    background-color: v.$color_crema;
+
+    & .fijarbody{
+        overflow: hidden;
+    }
+    & .body-scroll{
+        padding-top: 9rem;
+    }
+}
+
+h1,
+h2,
+h3,
+p{
+    font-family: v.$fuente_principal;
+    color: v.$color_negro;
+}
+
+a{
+    text-decoration: none;
+}

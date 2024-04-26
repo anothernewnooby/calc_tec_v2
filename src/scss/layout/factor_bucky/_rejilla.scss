@@ -1,0 +1,108 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedorBucky{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2.2rem;
+
+    h3{
+        font-size: 4.5rem;
+        font-weight: 400;
+    }
+
+    .primerFila,
+    .segundaFila,
+    .terceraFila,
+    .cuartaFila,
+    .quintaFila{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+
+        p{
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .primerFila{
+        font-weight: 700;
+        gap: 3rem;
+    }
+    .segundaFila,
+    .terceraFila,
+    .cuartaFila,
+    .quintaFila{
+        gap: 3.7rem;
+    }
+
+    .quintaFila{
+        margin-bottom: 4rem;
+    }
+
+}
+
+.separadorBuky{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 36rem;
+    height: 0.2rem;
+    background-color: v.$color_coralFuerte;
+}
+
+.calculoBucky{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+
+    input{
+        width: 20rem;
+        height: 5rem;
+        font-size: 2rem;
+        text-align: center;
+        background-color: v.$color_vacio;
+        border: none;
+
+         /* Agrega este código para eliminar las flechas */
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+             -webkit-appearance: none;
+             margin: 0;
+        }
+        -moz-appearance: textfield;
+ 
+        &:focus{
+            outline:none;
+            box-shadow: none;
+        }
+    }
+
+    button{
+        font-size: 2.3rem;
+        font-weight: 600;
+        width: 25rem;
+        height: 4rem;
+        color: v.$color_crema;
+        background-color: v.$color_coralFuerte;
+
+        border-radius: 2rem;
+    }
+
+    &:hover{
+        color: v.$color_coralFuerte;
+    }
+}
+
+.separadorFinal{
+    width: 90%;
+    height: 0.5rem;
+    background-color: v.$color_coralFuerte;
+    margin-top: 6rem;
+    
+}

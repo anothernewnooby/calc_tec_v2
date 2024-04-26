@@ -1,0 +1,129 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.nombreTecnica{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+    h3{
+        font-size: 2.5rem;
+        font-weight: 800;
+    }   
+}
+    
+
+.contenedor_botones{
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 2rem;
+
+    .boton_tec{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background-color: v.$color_vacio;
+        border: none;
+        cursor: pointer;
+        transition: background-color .3s;
+        
+    
+        &:hover{
+            background-color: v.$color_coralFuerte;
+        }
+    }
+}
+
+.boton_tec.seleccionado {
+    background-color: v.$color_coralFuerte;
+}
+
+.contenedor_iniciales{
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    
+    p{
+        font-size: 2.3rem;
+        font-weight: 600;
+    }
+}
+
+
+.contenedorEcuacion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+   
+
+    .contenedorDatos{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        
+        p{
+            font-size: 2rem;
+            font-weight: 300;
+            margin: 1rem 0;
+        }
+    }
+
+    .contendorInputsEc{
+        display: flex;
+        justify-content: flex-end; /* Cambiado de 'center' a 'flex-end' */
+        align-items: flex-end;
+        flex-direction: column;
+
+        input {
+            width: 15rem;
+            height: 2.5rem;
+            border: 1px solid v.$color_vacio;
+            border-radius: 0.5rem;
+            background-color: v.$color_vacio;
+            margin: 1rem 0;
+            text-align: center;
+        
+            /* Agrega este código para eliminar las flechas */
+            &::-webkit-inner-spin-button,
+            &::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+            -moz-appearance: textfield;
+
+            &:focus{
+                outline:none;
+            }
+        }
+
+        
+    }
+
+   
+}
+
+.calcular{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    margin-bottom: 0rem;
+
+
+    button{
+        font-size: 2.3rem;
+        font-weight: 600;
+        width: 25rem;
+        height: 4rem;
+        color: v.$color_crema;
+        background-color: v.$color_coralFuerte;
+
+        border-radius: 2rem;
+    }
+
+    &:hover{
+        color: v.$color_negro;
+    }
+}
