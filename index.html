@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculadora Radiologica</title>
+    <meta name="description" content="Calculadora radiológica online que te permite calcular la técnica adecuada para radiografías, así como compensar la técnica según las características del paciente. También incluye el cálculo del factor bucky para obtener resultados precisos en tus estudios radiológicos. ¡Optimiza tus prácticas radiológicas con nuestra herramienta fácil de usar!">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="build/css/app.css">
 </head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+
 <body>
     <header class="contenedor contenedor-header">
         <h1>Calculadora</h1>
-        <h2>Radiologica</h2>
+        <h2>Radiológica</h2>
     </header>
 
     <main class="contenedorMain">
@@ -29,7 +32,7 @@
 
            <section class="contenedorTecnica">
                 <div class="nombreTecnica">
-                   <h3>Intermedia</h3>                   
+                   <h3>Técnica</h3>                   
                 </div>
 
                 <div class="contenedor_botones">
@@ -144,7 +147,7 @@
             </div>
 
             <section class="calculoBucky">
-                <input type="number" placeholder="Ingresar Indice" class="factorizar">
+                <input type="number" placeholder="Ingresar Índice" class="factorizar">
                 <button onclick="calcularFactorBucky()">Factor Bucky</button>
             </section>
         </section>

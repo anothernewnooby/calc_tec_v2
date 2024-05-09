@@ -39,11 +39,13 @@ function calcular() {
     let tecnicaHomo = Math.ceil(tecnicaInter * 1.15);
     let masHomo = (masInter / 2).toFixed(1);
     //* tecnica ultra homogenizada
-    let tecnicaUltra = Math.ceil(espesor * 2 + constante);
-    let masUltra = (masBasica / 8).toFixed(1);
+    let tecnicaUltra = Math.ceil(((espesor/3) * 2) * 2 + constante);
+    let masUltra = (masBasica / 31.25).toFixed(1);
     let tecnicaUltraInter = Math.ceil(tecnicaUltra * 1.15);
     let tecnicaUltraHomo = Math.ceil(tecnicaUltraInter * 1.15);
     let tecnicaUltra3 = Math.ceil(tecnicaUltraHomo * 1.15);
+    let tecnicaUltra4 = Math.ceil(tecnicaUltra3 * 1.15);
+    let tecnicaUltra5 = Math.ceil(tecnicaUltra4 * 1.15);
 
     //* valores de kvp y mAs
     let kvpElement = document.querySelector('.kvp');
@@ -73,7 +75,7 @@ function calcular() {
     });
 
     boton4.addEventListener('click', function() {
-        kvpElement.textContent = tecnicaUltra3.toString().padStart(2, '0');
+        kvpElement.textContent = tecnicaUltra5.toString().padStart(2, '0');
         masElement.textContent = masUltra.padStart(2, '0');
         masFGlobal = parseFloat(masUltra); // Almacenar el valor en la variable global
     });
@@ -101,17 +103,28 @@ function compensar() {
 
     let diSquared = Math.pow(inputDI, 2);
     let dfSquared = Math.pow(inputDF, 2);
+    console.log(dfSquared)
 
     let masF = mas / diSquared * dfSquared;
 
-    console.log(masF);
     masElement.textContent = masF.toFixed(1).padStart(2, '0');
+
+    // Desplazamiento suave hasta el elemento "contenedorResultados"
+    document.querySelector('.contenedor-header').scrollIntoView({ behavior: 'smooth' });
 }
 
 //! factor Bucky
+let ultimoValor = null; // Almacena el último valor de entrada
+
 function calcularFactorBucky() {
     let inputFactorizarElement = document.querySelector('.factorizar'); // Selecciona el input correcto
     let factorizar = parseFloat(inputFactorizarElement.value) || 0;
+
+    // Si el valor de entrada no ha cambiado, no hagas nada y sal de la función
+    if (factorizar === ultimoValor) return;
+
+    // Actualiza el último valor de entrada
+    ultimoValor = factorizar;
 
     masFGlobal = parseFloat(masElement.textContent); // Actualiza masFGlobal con el valor actual en <h3 class="mas">
 
@@ -121,4 +134,6 @@ function calcularFactorBucky() {
     masElement.textContent = factorBucky.toFixed(1).padStart(2, '0'); // Actualiza el texto en <h3 class="mas">
     console.log(masFGlobal); // Imprimir el valor de masFGlobal
     // Aquí puedes hacer lo que necesites con factorBucky
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
